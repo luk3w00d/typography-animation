@@ -1,15 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Charmonman:wght@400;700&display=swap');
+/* google font for css */
+@import url("https://fonts.googleapis.com/css2?family=Cantarell&family=Charmonman:wght@400;700&display=swap");
 
-h1 { 
-    color: red;
+h1 {
+  color: red;
+  /* SHADOW for text */
+  text-shadow: 2px 3px 3px rgb(137, 43, 226);
 }
 
 p {
-    font-size: 20px;
-    font-weight: 700;
-    font-family: 'Cantarell', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Cantarell", sans-serif;
 }
 
 p strong {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* making the box rounded, adding photos */
+.bgimage {
+  width: 200px;
+  height: 150px;
+  color: aliceblue;
+  padding: 1rem;
+  background: url("http://placekeanu.com/500/300") blue 50% bottom no-repeat;
+  background-size: cover;
+  border-radius: 1rem 3rem;
+  /* SHADOW use three attributes the last being a color. Third px is for blur */
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.691);
+}
+
+/* opacity */
+.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  width: 100px;
+  height: 100px;
+  color: rgba(210, 0, 0, 0.524);
+  background: rgba(222, 184, 135, 0.222);
+  position: relative;
+  top: -100px;
+  left: 50px;
 }
