@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Charmonman:wght@400;700&display=swap');
+
+h1 { 
+    color: red;
+}
+
+p {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Cantarell', sans-serif;
+}
+
+p strong {
+    font-size: 1.5rem;
+}
