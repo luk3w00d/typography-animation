@@ -5,11 +5,15 @@
   0% {
     transform: translateY(100%);
   }
-    100% {
-      transform: translateY(0);
-    }
+  100% {
+    transform: translateY(0);
   }
+}
 
+/* *- means rule for everything. useing box-sizing as a rule helps to make no white space*/
+*{
+  box-sizing: border-box;
+}
 
 h1 {
   /* SHADOW for text. animation alows the color to fade */
@@ -85,16 +89,19 @@ p strong {
 }
 
 #boxes {
+  display: flex;
   margin-top: 4rem;
-  border: 1px solid red;
+  border: 2px solid red;
   width: 300px;
 }
 
 #boxes div {
+  
   width: 100px;
   display: inline-block;
   height: 100px;
   padding: 5px;
+  border: 2px solid black;
 }
 
 #boxes div:nth-of-type(1) {
