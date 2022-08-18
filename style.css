@@ -1,10 +1,20 @@
 /* google font for css */
 @import url("https://fonts.googleapis.com/css2?family=Cantarell&family=Charmonman:wght@400;700&display=swap");
 
+@keyframes slide {
+  0% {
+    transform: translateY(100%);
+  }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+
 h1 {
-  color: red;
-  /* SHADOW for text */
-  text-shadow: 2px 3px 3px rgb(137, 43, 226);
+  /* SHADOW for text. animation alows the color to fade */
+  text-shadow: 2px 3px 3px rgb(4, 2, 157);
+  animation: red-to-yellow 3s both infinite alternate;
 }
 
 p {
@@ -19,29 +29,82 @@ p strong {
 
 /* making the box rounded, adding photos */
 .bgimage {
+  /* overflow hides the .overlay  */
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   width: 200px;
-  height: 150px;
+  height: 180px;
   color: aliceblue;
-  padding: 1rem;
-  background: url("http://placekeanu.com/500/300") blue 50% bottom no-repeat;
+  background: url("http://placekeanu.com/500/300") rgb(43, 192, 105) 50% center
+    no-repeat;
   background-size: cover;
   border-radius: 1rem 3rem;
   /* SHADOW use three attributes the last being a color. Third px is for blur */
-  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.691);
+  box-shadow: 5px 5px 3px rgba(21, 66, 213, 0.691);
+  /* alows action bellow to work */
+  transition: width 1s;
 }
+
+/* when mouse is over photo it gets bigger */
+/* .bgimage:hover {
+  width: 250px;
+} */
+
+.bgimage:hover .overlay {
+  animation: slide 1.5s both;
+  /* transform: translateY(0); */
+}
+
+.bgimage:not :hover
 
 /* opacity */
 .overlay {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: bold;
   width: 100px;
-  height: 100px;
+  padding: 01.5rem;
   color: rgba(210, 0, 0, 0.524);
   background: rgba(222, 184, 135, 0.222);
-  position: relative;
-  top: -100px;
-  left: 50px;
+  /* moves text and box */
+  /* transform: translatey(100%); */
+  /* transition: transform 1.5s; */
+}
+
+.overlay span {
+  opacity: 0;
+  transition: opacity 1s 1.8s;
+}
+
+.bgimage:hover .overlay span {
+  opacity: 1;
+}
+
+#boxes {
+  margin-top: 4rem;
+  border: 1px solid red;
+  width: 300px;
+}
+
+#boxes div {
+  width: 100px;
+  display: inline-block;
+  height: 100px;
+  padding: 5px;
+}
+
+#boxes div:nth-of-type(1) {
+  background: green;
+}
+
+#boxes div:nth-of-type(2) {
+  background: teal;
+}
+
+#boxes div:nth-of-type(3) {
+  background: orange;
 }
